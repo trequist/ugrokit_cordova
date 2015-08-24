@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+           id="com.ugrokit.cordova.ugrokit"
+      version="1.7.16">
+  <name>UGrokIt</name>
+  <description>API for the UGrokIt RFID reader</description>
+
+  <js-module src="www/ugi.js" name="ugi">
+      <clobbers target="ugi" />
+  </js-module>
+  <js-module src="www/ugiinventory.js" name="ugiinventory">
+    <clobbers target="UgiInventory" />
+  </js-module>
+  <js-module src="www/ugitag.js" name="ugitag">
+      <clobbers target="UgiTag" />
+  </js-module>
+  <js-module src="www/ugitagreadstate.js" name="ugitagreadstate">
+    <clobbers target="UgiTagReadState" />
+  </js-module>
+  <js-module src="www/ugidetailedperreaddata.js" name="ugidetailedperreaddata">
+    <clobbers target="UgiDetailedPerReadData" />
+  </js-module>
+  <js-module src="www/ugiinventorydelegate.js" name="ugiinventorydelegate">
+      <clobbers target="UgiInventoryDelegate" />
+  </js-module>
+  <js-module src="www/ugirfidconfiguration.js" name="ugirfidconfiguration">
+      <clobbers target="UgiRfidConfiguration" />
+  </js-module>
+  <js-module src="www/ugibatteryinfo.js" name="ugibatteryinfo">
+      <clobbers target="UgiBatteryInfo" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="ugrokit" >
+        <param name="android-package" value="com.ugrokit.cordova.ugrokit.UGrokIt"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+      <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    </config-file>
+
+    <source-file src="src/android/com/ugrokit/cordova/ugrokit/UGrokIt.java" target-dir="src/com/ugrokit/cordova/ugrokit" />
+    <source-file src="src/android/libs/ugrokitapi.jar" target-dir="libs" />
+    <source-file src="src/android/libs/gson-2.3.1.jar" target-dir="libs" />
+    <source-file src="src/android/libs/armeabi/libugrokitapi.so" target-dir="libs/armeabi" />
+    <source-file src="src/android/libs/armeabi-v7a/libugrokitapi.so" target-dir="libs/armeabi-v7a" />
+    <source-file src="src/android/libs/mips/libugrokitapi.so" target-dir="libs/mips" />
+    <source-file src="src/android/libs/x86/libugrokitapi.so" target-dir="libs/x86" />
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="UGrokIt">
+        <param name="ios-package" value="ugrokit"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/UGrokIt.h" />
+    <source-file src="src/ios/UGrokIt.m" />
+
+    <header-file src="src/ios/include/Ugi.h" />
+    <header-file src="src/ios/include/UgiInventory.h" />
+    <header-file src="src/ios/include/UgiEpc.h" />
+    <header-file src="src/ios/include/UgiTag.h" />
+    <header-file src="src/ios/include/UgiTagReadState.h" />
+    <header-file src="src/ios/include/UgiRfidConfiguration.h" />
+    <header-file src="src/ios/include/Ugi_regions.h" />
+    <header-file src="src/ios/include/Ugi_antennaTuning.h" />
+    <header-file src="src/ios/include/Ugi_firmwareUpdate.h" />
+    <header-file src="src/ios/include/UgiInventoryDelegate.h" />
+    <header-file src="src/ios/include/UgiUtil.h" />
+    <header-file src="src/ios/include/UgiJson.h" />
+    <header-file src="src/ios/include/UgiConfigurationDelegate.h" />
+    <header-file src="src/ios/include/UgiDefaultConfigurationUi.h" />
+    <header-file src="src/ios/include/UgiUiUtil.h" />
+    <source-file src="src/ios/libUGrokItApi.a" framework="true" />
+
+    <framework src="libz.1.2.5.dylib" />
+    <framework src="AVFoundation.framework" />
+    <framework src="SystemConfiguration.framework" />
+    <framework src="AudioToolbox.framework" />
+    <framework src="MediaPlayer.framework" />
+  </platform>
+
+</plugin>
