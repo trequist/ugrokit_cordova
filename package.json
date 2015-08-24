@@ -1,5 +1,5 @@
 {
-  "name": "UGrokIt",
+  "name": "com.ugrokit.cordova.ugrokit",
   "version": "1.7.16",
   "description": "API for the UGrokIt RFID reader",
   "cordova": {
@@ -8,10 +8,6 @@
       "android",
       "ios"
     ]
-  },
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
