@@ -2,9 +2,10 @@
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-           id="com.ugrokit.cordova.ugrokit"
-      version="1.7.16">
+           id="com-ugrokit-cordova-ugrokit"
+      version="1.7.17">
   <name>UGrokIt</name>
+  <keywords>ugrokit,rfid</keywords>
   <description>API for the UGrokIt RFID reader</description>
 
   <js-module src="www/ugi.js" name="ugi">

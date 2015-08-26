@@ -567,7 +567,7 @@ public class UGrokIt extends CordovaPlugin implements Ugi.FirmwareUpdateDelegate
 	        	          public void exec(UgiTag tag, UgiInventory.TagAccessReturnValues result) {
 	        	            try {
 	        	              JSONObject d = new JSONObject();
-	        	              d.put("result", result);
+	        	              d.put("result", result.ordinal());
 	        	              tagToJson(d, tag);
 	        	              _callbackContext.success(d);
 	        	            } catch (JSONException ex) {
@@ -601,7 +601,7 @@ public class UGrokIt extends CordovaPlugin implements Ugi.FirmwareUpdateDelegate
 	        	            public void exec(UgiTag tag, UgiInventory.TagAccessReturnValues result) {
 	        	              try {
 	        	                JSONObject d = new JSONObject();
-	        	                d.put("result", result);
+	        	                d.put("result", result.ordinal());
 	        	                tagToJson(d, tag);
 	        	                _callbackContext.success(d);
 	        	              } catch (JSONException ex) {
@@ -629,7 +629,7 @@ public class UGrokIt extends CordovaPlugin implements Ugi.FirmwareUpdateDelegate
 	        	          public void exec(UgiTag tag, UgiInventory.TagAccessReturnValues result) {
 	        	            try {
 	        	              JSONObject d = new JSONObject();
-	        	              d.put("result", result);
+	        	              d.put("result", result.ordinal());
 	        	              tagToJson(d, tag);
 	        	              _callbackContext.success(d);
 	        	            } catch (JSONException ex) {
@@ -659,7 +659,7 @@ public class UGrokIt extends CordovaPlugin implements Ugi.FirmwareUpdateDelegate
 	        	          public void exec(UgiTag tag, byte[] data, UgiInventory.TagAccessReturnValues result) {
 	        	            try {
 	        	              JSONObject d = new JSONObject();
-	        	              d.put("result", result);
+	        	              d.put("result", result.ordinal());
 	        	              d.put("data", byteArrayToString(data));
 	        	              tagToJson(d, tag);
 	        	              _callbackContext.success(d);
@@ -692,7 +692,7 @@ public class UGrokIt extends CordovaPlugin implements Ugi.FirmwareUpdateDelegate
 	        	          public void exec(UgiTag tag, boolean headerBit, byte[] response, UgiInventory.TagAccessReturnValues result) {
 	        	            try {
 	        	              JSONObject d = new JSONObject();
-	        	              d.put("result", result);
+	        	              d.put("result", result.ordinal());
 	        	              d.put("headerBit", headerBit);
 	        	              d.put("response", byteArrayToString(response));
 	        	              tagToJson(d, tag);

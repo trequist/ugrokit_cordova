@@ -138,10 +138,14 @@ function Ugi() {
    *   Android: fix bug with low-level filters and large numbers of tags<br>
    *  Version 1.7.16 - August 15, 2015 - Reader protocol 20<br>
    *   Fix crashing bug with setting region<br>
+   *  Version 1.7.17 - August 26, 2015 - Reader protocol 20<br>
+   *   Fix "result" from programTag, readTag, writeTag, lockUnlockTag, customCommandToTag to be correct<br>
+   *   Fix plugin.xml to have proper schema for Android<br>
+   *   Demo app improvements<br>
    * @type {String}
    * @readonly
    */
-  this.pluginVersion = "1.7.16";
+  this.pluginVersion = "1.7.17";
 
   //
   // Static properties that we get at load time so they are available without callbacks

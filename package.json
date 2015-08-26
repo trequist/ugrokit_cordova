@@ -1,6 +1,7 @@
 {
-  "name": "com.ugrokit.cordova.ugrokit",
-  "version": "1.7.16",
+  "name": "com-ugrokit-cordova-ugrokit",
+  "cordova_name": "UGrokIt",
+  "version": "1.7.17",
   "description": "API for the UGrokIt RFID reader",
   "cordova": {
     "id": "com.ugrokit.cordova.ugrokit",
@@ -8,6 +9,10 @@
       "android",
       "ios"
     ]
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,6 +25,6 @@
     "cordova-android",
     "cordova-ios"
   ],
-  "author": "U Grok It",
+  "author": "Tony Requist",
   "license": "Apache 2.0"
 }
